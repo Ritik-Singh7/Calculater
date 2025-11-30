@@ -11,17 +11,14 @@ buttons.forEach(button => {
     button.addEventListener("click", () => {
         let value = button.textContent.trim();
 
-        // AC
         if (value === "AC") {
             result = "";
         }
 
-        // C
         else if (value === "C") {
             result = result.slice(0, -1);
         }
 
-        // x → *
         else if (value === "x") {
             if ("+-*/.".includes(result.slice(-1))) {
                 result = result.slice(0, -1) + "*";
@@ -30,7 +27,6 @@ buttons.forEach(button => {
             }
         }
 
-        // +
         else if (value === "+") {
             if ("+-*/.".includes(result.slice(-1))) {
                 result = result.slice(0, -1) + "+";
@@ -39,7 +35,6 @@ buttons.forEach(button => {
             }
         }
 
-        // -
         else if (value === "-") {
             if ("+-*/.".includes(result.slice(-1))) {
                 result = result.slice(0, -1) + "-";
@@ -48,7 +43,6 @@ buttons.forEach(button => {
             }
         }
 
-        // .
         else if (value === ".") {
             if ("+-*/.".includes(result.slice(-1))) {
                 result = result.slice(0, -1) + ".";
@@ -57,7 +51,6 @@ buttons.forEach(button => {
             }
         }
 
-        // /
         else if (value === "/") {
             if ("+-*/.".includes(result.slice(-1))) {
                 result = result.slice(0, -1) + "/";
@@ -66,7 +59,6 @@ buttons.forEach(button => {
             }
         }
 
-        // =
         else if (value === "=") {
             try {
                 if (result.trim() === "") return;
@@ -76,7 +68,6 @@ buttons.forEach(button => {
             }
         }
 
-        // Other inputs
         else {
             if (result === "Error") result = "";
             result += value;
@@ -87,3 +78,4 @@ buttons.forEach(button => {
 });
 
 updateDisplay(result);
+
